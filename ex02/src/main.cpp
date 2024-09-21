@@ -3,18 +3,18 @@
 #include "PresidentialPardonForm.h"
 #include "RobotomyRequestForm.h"
 
-void testShrubberyCreationForm();
-void testPresidentialPardonForm();
-void testRobotomyRequestForm();
+void ShrubberyCreationForm_test();
+void PresidentialPardonForm_test();
+void RobotomyRequestForm_test();
 
 int main() {
-	testShrubberyCreationForm();
-	testPresidentialPardonForm();
-	testRobotomyRequestForm();
+	ShrubberyCreationForm_test();
+	PresidentialPardonForm_test();
+	RobotomyRequestForm_test();
 	return 0;
 }
 
-void testShrubberyCreationForm() {
+void ShrubberyCreationForm_test() {
 	try {
 		Bureaucrat bob("Bob", 1);
 		std::cout << bob << std::endl;
@@ -42,7 +42,7 @@ void testShrubberyCreationForm() {
 	}
 }
 
-void testPresidentialPardonForm() {
+void PresidentialPardonForm_test() {
 	try {
 		Bureaucrat bob("Bob", 1);
 		std::cout << bob << std::endl;
@@ -70,7 +70,7 @@ void testPresidentialPardonForm() {
 	}
 }
 
-void testRobotomyRequestForm() {
+void RobotomyRequestForm_test() {
 	try {
 		Bureaucrat bob("Bob", 1);
 		std::cout << bob << std::endl;
