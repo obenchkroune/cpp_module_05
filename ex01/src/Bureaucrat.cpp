@@ -1,4 +1,5 @@
 #include "Bureaucrat.h"
+#include "Form.h"
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade)
 	: m_name(name), m_grade(grade)
@@ -45,12 +46,24 @@ void Bureaucrat::decrementGrade()
 	m_grade++;
 }
 
+void Bureaucrat::signForm(Form &f)
+{
+	try {
+		f.beSigned(*this);
+		std::cout << m_name << " signed " << f.getName() << '\n';
+	} catch (std::exception& e) {
+		std::cout
+			<< m_name << " couldn't sign " << f.getName()
+			<< " because " << e.what() << "." << std::endl;
+	}
+}
+
 void Bureaucrat::checkGrade(int grade) const
 {
 	if (grade < 1)
-		throw GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
-		throw GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw()
